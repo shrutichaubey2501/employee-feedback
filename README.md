@@ -1,70 +1,187 @@
-# Getting Started with Create React App
+# Employee Feedback Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive full-stack web application designed to collect, manage, and analyze employee feedback within organizations. This system provides an intuitive interface for employees to submit feedback and enables administrators to track and analyze feedback data effectively.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **User-Friendly Interface**: Modern React-based frontend with Material-UI components
+- **Feedback Collection**: Streamlined feedback submission process for employees
+- **Real-time Data**: Live feedback updates and management
+- **Enterprise Database**: SAP HANA database integration for robust data storage
+- **Cross-Platform**: Responsive design that works on desktop and mobile devices
+- **API Integration**: RESTful API for seamless frontend-backend communication
 
-### `npm start`
+## 🛠 Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend (Client)
+- **React 18** - Modern JavaScript library for building user interfaces
+- **Material-UI (MUI)** - React component library for faster and easier web development
+- **Axios** - Promise-based HTTP client for API calls
+- **Create React App** - Toolchain for React development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend (Server)
+- **Node.js** - JavaScript runtime environment
+- **Express.js** - Fast, unopinionated web framework for Node.js
+- **SAP HANA Database** - Enterprise-grade in-memory database
+- **CORS** - Cross-Origin Resource Sharing enabled
+- **Body Parser** - Middleware to parse incoming request bodies
 
-### `npm test`
+## 📋 Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Before running this application, make sure you have the following installed:
 
-### `npm run build`
+- **Node.js** (version 14.x or higher) - [Download Node.js](https://nodejs.org/)
+- **npm** (comes with Node.js) or **yarn**
+- **SAP HANA Database** access and credentials
+- **Git** - [Download Git](https://git-scm.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📥 Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone the Repository
+```bash
+git clone https://github.com/shrutichaubey2501/employee-feedback.git
+cd employee-feedback
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Install Server Dependencies
+```bash
+cd server
+npm install
+```
 
-### `npm run eject`
+### 3. Install Client Dependencies
+```bash
+cd ../client
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ⚙️ Configuration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Database Configuration
+1. Navigate to the `server/config` directory
+2. Update the database configuration with your SAP HANA credentials
+3. Ensure your SAP HANA database is running and accessible
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Environment Setup
+Create necessary environment variables for database connection and server configuration in the server directory.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Running the Application
 
-## Learn More
+### Method 1: Start Both Services Separately
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Start the Backend Server
+```bash
+# Navigate to server directory
+cd server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Start the server
+npm start
+```
+The server will start on **http://localhost:3001**
 
-### Code Splitting
+#### Start the Frontend Application
+Open a new terminal window:
+```bash
+# Navigate to client directory
+cd client
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Start the React application
+npm start
+```
+The client application will start on **http://localhost:3000**
 
-### Analyzing the Bundle Size
+### Method 2: Development Mode
+For development, you'll want to run both servers simultaneously:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Terminal 1** (Backend):
+   ```bash
+   cd server
+   npm start
+   ```
 
-### Making a Progressive Web App
+2. **Terminal 2** (Frontend):
+   ```bash
+   cd client
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🌐 Accessing the Application
 
-### Advanced Configuration
+Once both servers are running:
+- **Frontend**: Open your browser and navigate to `http://localhost:3000`
+- **Backend API**: The API endpoints are available at `http://localhost:3001`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The React application will automatically open in your default browser. If it doesn't, manually navigate to the URL above.
 
-### Deployment
+## 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+employee-feedback/
+├── client/                 # React frontend application
+│   ├── public/            # Public assets
+│   ├── src/               # Source code
+│   ├── package.json       # Frontend dependencies
+│   └── ...
+├── server/                # Node.js backend application
+│   ├── config/           # Database and server configuration
+│   ├── controllers/      # Business logic controllers
+│   ├── models/           # Database models
+│   ├── routes/           # API route definitions
+│   ├── app.js            # Main server file
+│   ├── package.json      # Backend dependencies
+│   └── ...
+├── README.md
+└── .gitignore
+```
 
-### `npm run build` fails to minify
+## 🔧 Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Frontend (Client)
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (irreversible)
+
+### Backend (Server)
+- `npm start` - Starts the server with Node.js
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Port Conflicts**: If ports 3000 or 3001 are already in use, you can:
+   - Kill the process using the port
+   - Modify the port numbers in the configuration
+
+2. **Database Connection**: Ensure SAP HANA database is running and credentials are correct
+
+3. **CORS Issues**: The server is configured to accept requests from `http://localhost:3000`. If you change the frontend port, update the CORS configuration in `server/app.js`
+
+4. **Dependencies**: If you encounter dependency issues, try:
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👥 Support
+
+If you encounter any issues or have questions, please:
+1. Check the troubleshooting section above
+2. Open an issue in this repository
+3. Contact the development team
+
+---
+
+**Note**: Make sure both the frontend and backend servers are running simultaneously for the application to work properly. The frontend communicates with the backend API to manage employee feedback data.
